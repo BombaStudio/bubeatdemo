@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BuBeat</title>
+		<style>
+
+		#disk {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 10%;
+			left: 12.5%;
+			background: #1E1D1D;
+			border-radius: 50%;
+			vertical-align: middle;
+		}
+		#player {
+			position: absolute;
+			width: 150px;
+			height: 120px;
+			top: -5px;
+			left: 25%;
+			background: #cc3300;
+			border-radius: 10%;
+			vertical-align: middle;
+		}
+		.appbar {
+			position: absolute;
+			width: 100%;
+			height: 15%;
+			top: 0;
+			left: 0;
+			background: #BA2424;
+		}
+		#b1 {
+			border: 2px solid rgba(0,0,0,1);
+			border-radius: 20px;
+			outline: none;
+			cursor: pointer;;
+			position: absolute;
+			background-color: #BA2424;
+			color: #ffffff;
+			width: 15%;
+			height: 25%;
+			top: 50%;
+			left: 0;
+			font-size: 100%;
+			float: left;
+		}
+		#b1:hover {
+			border-radius: 20px;
+			background: rgba(0,0,0,1);
+			box-shadow: 0 12px 16px 0 rgba(255,255,255,0.24), 0 17px 50px 0 rgba(255,255,255,0.19);
+			font-size: 100%;			
+		}
+		#b2 {
+			border: 2px solid rgba(0,0,0,1);
+			border-radius: 20px;
+			outline: none;
+			cursor: pointer;;
+			position: absolute;
+			background-color: #BA2424;
+			color: #ffffff;
+			width: 15%;
+			height: 25%;
+			top: 50%;
+			left: 16%;
+			font-size: 100%;
+			float: left;
+		}
+		#b2:hover {
+			border-radius: 20px;
+			background: rgba(0,0,0,1);
+			box-shadow: 0 12px 16px 0 rgba(255,255,255,0.24), 0 17px 50px 0 rgba(255,255,255,0.19);
+			font-size: 100%;			
+		}
+		.logoimg {
+			border-radius: 50%;
+		}
+		#disk:hover {
+			-webkit-animation: rotation 2s infinite linear;
+		}
+		@-webkit-keyframes rotation {
+			from {
+					-webkit-transform: rotate(0deg);
+			}
+			to {
+					-webkit-transform: rotate(359deg);
+			}
+		}
+		.katbut {
+			border: 2px solid rgba(0,0,0,1);
+			border-radius: 20px;
+			width: 35%;
+			height: 25%;
+			background-color: #BA2424;
+			color: #ffffff;
+			font-size: 100%;
+		}
+		.katbut:hover {
+			border-radius: 20px;
+			background: rgba(0,0,0,1);
+			box-shadow: 0 12px 16px 0 rgba(255,255,255,0.24), 0 17px 50px 0 rgba(255,255,255,0.19);
+			font-size: 100%;			
+		}
+		#kategori {
+			position: absolute;
+			width: 350px;
+			height: 120px;
+			top: -5px;
+			left: 25%;
+			background: #cc3300;
+			border-radius: 10%;
+			vertical-align: middle;
+		}
+		#main {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(153,153,153,1);
+			top: 15%;
+			left: 0%;
+		}
+		.listele {
+			position: absolute;
+			background-color: rgba(255,204,255,0.5); 
+			top: 10%;
+			left: 25%;
+		}
+		.sat {
+			width: 50px;
+			height: 50px;
+			background-image: url("https://img.icons8.com/material-outlined/48/000000/bonds.png");
+		}
+		</style>
+	</head>
+	<body>
+		<script>
+		var i = 0;
+		var s = 0;
+		var g = 0;
+		var muziks = [
+			"assest/avcibeat1.aac",
+			"assest/avcibeat2.aac",
+			"assest/richbeat1.mp3",
+		];
+		var muzikname = [
+			"Avcı Beat 1",
+			"Avcı Beat 2",
+			"Richard Beat 1",
+		];
+		var rand = Math.floor(Math.random() *  muziks.length);
+		var rand2 = rand;
+		var muzik = new Audio(muziks[rand2]);
+		function diskkay(i){
+			if (i == 0){
+				category(1);
+				run();
+			}
+			if (i == 1){
+				backrun();
+			}
+			function run(){
+				var player = document.getElementById("player");
+				var p = 0;
+				var count = 120;
+				var i = setInterval(kay, 10);
+				function kay(){
+					if (p == count){
+						clearInvertal(i)
+					}
+					else {
+						p++;
+						player.style.top = p + "px";
+					}
+				}
+			}
+			function backrun(){
+				var player = document.getElementById("player");
+				var p = 0;
+				var count = -120;
+				var i = setInterval(kay, 10);
+				function kay(){
+					if (p == count){
+						clearInvertal(i)
+					}
+					else {
+						p--;
+						player.style.top = p + "px";
+					}
+
+				}
+			}
+		}
+		function search(s){
+		}
+		function category(g){
+			if (g == 0){
+				diskkay(1)
+				run();
+			}
+			if (g == 1){
+				backrun();
+			}
+			function run(){
+				var player = document.getElementById("kategori");
+				var p = 0;
+				var count = 120;
+				var i = setInterval(kay, 10);
+				function kay(){
+					if (p == count){
+						clearInvertal(i)
+					}
+					else {
+						p++;
+						player.style.top = p + "px";
+						player.style.height = p + "px";
+					}
+				}
+			}
+			function backrun(){
+				var player = document.getElementById("kategori");
+				var p = 0;
+				var count = -120;
+				var i = setInterval(kay, 10);
+				function kay(){
+					if (p == count){
+						clearInvertal(i)
+					}
+					else {
+						p--;
+						player.style.top = p + "px";
+						player.style.height = p + "px";
+					}
+
+				}
+			}
+		}
+		function kate(c){
+			var main = document.getElementById("main");
+			var sec = rand;
+			if (c == 1){
+				main.innerHTML = '<div class="listele"><audio controls><source src="'+muziks[0]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[0]+'</p><button class="sat"></button><br><audio controls><source src="'+muziks[1]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[1]+'</p><button class="sat"></button><br><audio controls><source src="'+muziks[2]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[2]+'</p><button class="sat"></button><br></div>';
+			}
+			if (c == 2){
+				main.innerHTML = '<div class="listele"><audio controls><source src="'+muziks[0]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[0]+'</p><button class="sat"></button><br><audio controls><source src="'+muziks[1]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[1]+'</p><button class="sat"></button><br><audio controls><source src="'+muziks[2]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[2]+'</p><button class="sat"></button><br></div>';
+			}
+			if (c == 3){
+				main.innerHTML = '<div class="listele"><audio controls><source src="'+muziks[0]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[0]+'</p><button class="sat"></button><br><audio controls><source src="'+muziks[1]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[1]+'</p><button class="sat"></button><br><audio controls><source src="'+muziks[2]+'" type="audio/mpeg"></audio><p style="font-style: italic;">'+muzikname[2]+'</p><button class="sat"></button><br></div>';
+			}
+		}
+		</script>
+		<div style"text-align:center">
+			<div id="main"></div>
+			<div id="player">
+				<div id="disk" onmouseover="muzik.play();" onmouseleave="muzik.pause();">
+					<img src="assest/logo.png" width="100" height="100" class="logoimg">
+				</div>
+			</div>
+			<div id="arama">
+				<form action="" method="POST">
+					<input type="text" name="search">
+					<input type="submit" value="submit">
+				</form>
+			</div>
+			<div id="kategori">
+				<button class="katbut" onclick="kate(1);category(1);">Flex</button>
+				<button class="katbut" onclick="kate(2);category(1);">Horror Core</button>
+				<button class="katbut" onclick="kate(3);category(1);">Trip</button>
+			</div>
+			<div class="appbar">
+				<button id="b1" onclick="if(i==0){diskkay(i);i++;}else{diskkay(i);i--;}">Play Demo</button>
+				<button id="b2" onclick="if(g == 0){category(g);g++;}else{category(g);g--;}">Category</button>
+			</div>
+			
+		</div>
+	</body>
+</html>

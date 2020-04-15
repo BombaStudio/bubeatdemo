@@ -165,7 +165,7 @@
 			function run(){
 				var player = document.getElementById("player");
 				var p = 0;
-				var count = 120;
+				var count = 15;
 				var i = setInterval(kay, 10);
 				function kay(){
 					if (p == count){
@@ -173,14 +173,14 @@
 					}
 					else {
 						p++;
-						player.style.top = p + "px";
+						player.style.top = p + "%";
 					}
 				}
 			}
 			function backrun(){
 				var player = document.getElementById("player");
 				var p = 0;
-				var count = -120;
+				var count = -15;
 				var i = setInterval(kay, 10);
 				function kay(){
 					if (p == count){
@@ -188,7 +188,7 @@
 					}
 					else {
 						p--;
-						player.style.top = p + "px";
+						player.style.top = p + "%";
 					}
 
 				}
@@ -207,7 +207,7 @@
 			function run(){
 				var player = document.getElementById("kategori");
 				var p = 0;
-				var count = 120;
+				var count = 15;
 				var i = setInterval(kay, 10);
 				function kay(){
 					if (p == count){
@@ -215,15 +215,15 @@
 					}
 					else {
 						p++;
-						player.style.top = p + "px";
-						player.style.height = p + "px";
+						player.style.top = p + "%";
+						player.style.height = p + "%";
 					}
 				}
 			}
 			function backrun(){
 				var player = document.getElementById("kategori");
 				var p = 0;
-				var count = -120;
+				var count = -15;
 				var i = setInterval(kay, 10);
 				function kay(){
 					if (p == count){
@@ -231,8 +231,8 @@
 					}
 					else {
 						p--;
-						player.style.top = p + "px";
-						player.style.height = p + "px";
+						player.style.top = p + "%";
+						player.style.height = p + "%";
 					}
 
 				}
